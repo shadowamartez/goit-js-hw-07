@@ -1,9 +1,8 @@
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
+// Change code below this lin
+console.log(galleryItems); 
 
-console.log(galleryItems);
-
-const listItems = document.querySelector(".gallery");
+const listItemsNew = document.querySelector(".gallery");
 
 function createMarkupItems(arr) {
     return arr.map(({preview, original, description}) => `
@@ -13,7 +12,9 @@ function createMarkupItems(arr) {
     </a>
     </li>`)
     .join('')
-}
+};
+
+listItemsNew.insertAdjacentHTML('beforeend', createMarkupItems(galleryItems));
 
 const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250
